@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Income - KoomiPay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="form-container">
+        <h1 class="form-title">
+            Add income
+        </h1>
+        <img src="img/incomescreen.png" alt="Income Koala" class="form-image">
+        <section class="form-card">
+
+            <div class="input-group">
+                <label>Amount</label>
+                <input type="number" id="income-amount" placeholder="0.00">
+            </div>
+
+            <div class="input-group">
+                <label>Category</label>
+                <select id="income-category">
+                    <option value="Work">
+                        Work
+                    </option>
+                    <option value="Tips">
+                        Tips
+                    </option>
+                    <option value="Extra">
+                        Extra
+                    </option>
+                    <option value="Gift">
+                        Gift
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Details</label>
+                <input type="text" id="income-details" placeholder="income details">
+            </div>
+
+        </section>
+
+        <section class="form-buttons">
+            <button class="add-btn income-btn" onclick="saveIncome()">
+                add
+            </button>
+            <button class="cancel-btn" onclick="navigateTo('home.html')">
+                cancel
+            </button>
+        </section>
+    </main>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

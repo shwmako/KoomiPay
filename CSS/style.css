@@ -1,0 +1,490 @@
+/*RESET & VARIABLES*/
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-main: #212529;
+    --text-muted: #666666;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --btn-gray: #B8B4B3;
+    --income-color: #164A09;
+    --expense-color: #861214;
+    --income-btn: #93A292;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Google Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* TRANSICIÓN ENTRE PÁGINAS */
+body.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+/* GLOBAL */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+select,
+button {
+    font-family: 'Google Sans', sans-serif;
+}
+
+/*SPLASH SCREEN*/
+.splash-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.splash-container img:first-child {
+    width: 180px;
+}
+
+.splash-container img:last-child {
+    width: 220px;
+}
+
+/* HOME SCREEN */
+.home-container {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    padding: 30px 25px;
+    margin: auto;
+}
+
+.home-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.main-illustration {
+    width: 300px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.balance-card {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.balance-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.btn-income,
+.btn-expense {
+    flex: 1;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    background: var(--btn-gray);
+    color: var(--text-main);
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.btn-income:hover,
+.btn-expense:hover {
+    transform: scale(1.03);
+}
+
+.movements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movements-header h3 {
+    font-size: 30px;
+}
+
+.view-all {
+    text-decoration: none;
+    color: var(--text-muted);
+}
+
+.movements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movement-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.movement-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.movement-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.movement-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.movement-details {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.positive {
+    color: var(--income-color);
+    font-weight: 700;
+}
+
+.negative {
+    color: var(--expense-color);
+    font-weight: 700;
+}
+
+.empty-text{
+    text-align:center;
+    color:var(--text-muted);
+    margin-top:20px;
+    font-size:15px;
+}
+
+/* ADD INCOME / EXPENSE */
+
+.form-container {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    padding: 30px 20px;
+    margin: auto;
+}
+
+.form-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.form-image {
+    width: 220px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.form-card {
+    background: white;
+    border-radius: 30px;
+    padding: 32px 26px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    column-gap: 18px;
+}
+
+.input-group label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: 48px;
+    border: none;
+    background: #D3D3D3;
+    border-radius: 24px;
+    padding: 0 18px;
+    font-size: 17px;
+    color: var(--text-main);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.input-group input::placeholder {
+    color: #7A7A7A;
+}
+
+.input-group select {
+    cursor: pointer;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    transform: scale(1.02);
+    background: #CECECE;
+}
+
+.input-group select {
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.add-btn {
+    width: 180px;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.03);
+}
+
+.income-btn {
+    background: var(--income-btn);
+}
+
+.expense-btn {
+    background: #6F6F6F;
+}
+
+.cancel-btn {
+    width: 180px;
+    padding: 14px;
+    border-radius: 30px;
+    border: 1px solid #999999;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.cancel-btn:hover {
+    transform: scale(1.03);
+}
+
+/* CONFIRM SCREEN */
+
+.confirm-container {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.confirm-image {
+    width: 240px;
+    margin-bottom: 30px;
+}
+
+.confirm-title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-main);
+}
+
+/* MOVEMENTS PAGE */
+
+.movements-page {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    padding: 30px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.movements-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 35px;
+}
+
+.all-movements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.movements-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.movements-home-btn {
+    width: 220px;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    background: #6F6F6F;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.movements-clear-btn {
+    width: 220px;
+    border: 1px solid #B8B4B3;
+    padding: 14px;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.movements-home-btn:hover,
+.movements-clear-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.movement-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-weight: 400;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.btn-income:hover,
+.btn-expense:hover,
+.add-btn:hover,
+.cancel-btn:hover,
+.movements-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:480px) {
+    .home-container,
+    .form-container,
+    .movements-page {
+        padding: 25px 18px;
+    }
+
+    .home-header h1,
+    .form-title,
+    .movements-title {
+        font-size: 38px;
+    }
+
+    .balance-amount {
+        font-size: 44px;
+    }
+
+    .confirm-title {
+        font-size: 42px;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    overflow-x: hidden;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoomiPay - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="home-container">
+        <header class="home-header">
+            <h1>KoomiPay</h1>
+            <img src="img/home1.svg" alt="Koala" class="main-illustration">
+        </header>
+
+        <section class="balance-card">
+            <h2>Balance</h2>
+            <div class="balance-amount">
+                <span class="currency">S/</span>
+                <span id="total-balance">0.00</span>
+            </div>
+        </section>
+
+        <section class="actions">
+            <button class="btn-income" onclick="navigateTo('add-income.html')"> income
+            </button>
+
+            <button class="btn-expense" onclick="navigateTo('add-expense.html')"> expense
+            </button>
+        </section>
+
+        <section class="movements-header">
+            <h3>Movements</h3>
+            <a href="#" class="view-all" onclick="navigateTo('movements.html')">
+                view all
+            </a>
+        </section>
+
+        <section class="movements-list" id="movements-list">
+        </section>
+    </main>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

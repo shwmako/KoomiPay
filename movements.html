@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movements - KoomiPay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="movements-page">
+        <h1 class="movements-title">
+            Movements
+        </h1>
+        <section class="all-movements-list" id="all-movements-list"></section>
+        <section class="movements-buttons">
+            <button class="movements-home-btn" onclick="navigateTo('home.html')">
+                back
+            </button>
+            <button class="movements-clear-btn" onclick="clearAllData()">
+                clear data
+            </button>
+        </section>
+    </main>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
