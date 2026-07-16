@@ -7,7 +7,7 @@
     <title>KoomiPay - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -16,30 +16,45 @@
     <main class="home-container">
         <header class="home-header">
             <h1>KoomiPay</h1>
-            <img src="img/home1.svg" alt="Koala" class="main-illustration">
+            <div class="header-badge">🐨</div>
         </header>
 
+        <img src="img/home1.svg" alt="Koala" class="main-illustration">
+
         <section class="balance-card">
-            <h2>Balance</h2>
+            <h2>balance total</h2>
             <div class="balance-amount">
                 <span class="currency">S/</span>
                 <span id="total-balance">0.00</span>
             </div>
+            <div class="balance-summary">
+                <span class="summary-in" id="summary-in">+0.00 este mes</span>
+                <span class="summary-out" id="summary-out">-0.00 este mes</span>
+            </div>
+        </section>
+
+        <section class="pending-card" id="pending-card" onclick="navigateTo('movements.html')" style="display:none;">
+            <div>
+                <p class="pending-label">te deben</p>
+                <p class="pending-amount">S/ <span id="pending-amount">0.00</span></p>
+            </div>
+            <div class="pending-icon">⏳</div>
         </section>
 
         <section class="actions">
-            <button class="btn-income" onclick="navigateTo('add-income.html')"> income
-            </button>
+            <button class="btn-income" onclick="navigateTo('add-income.html')">💰 income</button>
+            <button class="btn-expense" onclick="navigateTo('add-expense.html')">🛍️ expense</button>
+        </section>
 
-            <button class="btn-expense" onclick="navigateTo('add-expense.html')"> expense
-            </button>
+        <section style="margin-bottom:30px;">
+            <a href="#" onclick="navigateTo('add-pending.html')" style="display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; color:var(--pending-text); font-size:13px; font-weight:600; background:var(--pending-bg); padding:10px; border-radius:16px;">
+                ⏳ add money someone owes you
+            </a>
         </section>
 
         <section class="movements-header">
-            <h3>Movements</h3>
-            <a href="#" class="view-all" onclick="navigateTo('movements.html')">
-                view all
-            </a>
+            <h3>movements</h3>
+            <a href="#" class="view-all" onclick="navigateTo('movements.html')">view all</a>
         </section>
 
         <section class="movements-list" id="movements-list">

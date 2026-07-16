@@ -7,8 +7,8 @@
     <title>KoomiPay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -19,14 +19,18 @@
     </div>
 
 <script>
+    requestAnimationFrame(() => {
+        document.body.classList.add("fade-in");
+    });
     setTimeout(() => {
-        document.body.style.opacity = "0";
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
     }, 1200);
     setTimeout(() => {
         window.location.href = "home.html";
-    }, 1600);
+    }, 1500);
 
 </script>
-    
+
 </body>
 </html>

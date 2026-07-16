@@ -7,16 +7,14 @@
     <title>Add Income - KoomiPay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <main class="form-container">
-        <h1 class="form-title">
-            Add income
-        </h1>
+        <h1 class="form-title">Add income</h1>
         <img src="img/incomescreen.png" alt="Income Koala" class="form-image">
         <section class="form-card">
 
@@ -26,20 +24,16 @@
             </div>
 
             <div class="input-group">
-                <label>Category</label>
-                <select id="income-category">
-                    <option value="Work">
-                        Work
-                    </option>
-                    <option value="Tips">
-                        Tips
-                    </option>
-                    <option value="Extra">
-                        Extra
-                    </option>
-                    <option value="Gift">
-                        Gift
-                    </option>
+                <label>Who gave it to you</label>
+                <select id="income-source">
+                    <option value="Mama">Mama</option>
+                    <option value="Papa">Papa</option>
+                    <option value="Hermano/a">Hermano/a</option>
+                    <option value="Amigo/a">Amigo/a</option>
+                    <option value="Trabajo">Trabajo</option>
+                    <option value="Propina">Propina</option>
+                    <option value="Regalo">Regalo</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
 
@@ -51,12 +45,8 @@
         </section>
 
         <section class="form-buttons">
-            <button class="add-btn income-btn" onclick="saveIncome()">
-                add
-            </button>
-            <button class="cancel-btn" onclick="navigateTo('home.html')">
-                cancel
-            </button>
+            <button class="add-btn income-btn" onclick="saveIncome()">add</button>
+            <button class="cancel-btn" onclick="navigateTo('home.html')">cancel</button>
         </section>
     </main>
     <script src="js/storage.js"></script>

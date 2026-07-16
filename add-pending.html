@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Expense - KoomiPay</title>
+    <title>Money Owed - KoomiPay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
@@ -12,41 +12,42 @@
 </head>
 
 <body>
+
     <main class="form-container">
-        <h1 class="form-title">Add expense</h1>
-        <img src="img/expensescreen.png" alt="Expense" class="form-image">
+        <h1 class="form-title">Money owed</h1>
+        <div class="pending-badge-row">⏳ this won't count in your balance yet</div>
 
         <section class="form-card">
+
             <div class="input-group">
                 <label>Amount</label>
-                <input type="number" id="expense-amount" placeholder="0.00">
+                <input type="number" id="pending-amount-input" placeholder="0.00">
             </div>
 
             <div class="input-group">
-                <label>Category</label>
-                <select id="expense-category">
-                    <option value="Food">Food</option>
-                    <option value="Games">Games</option>
-                    <option value="Shopping">Shopping</option>
-                    <option value="Bills">Bills</option>
-                    <option value="Robux">Robux</option>
-                    <option value="Other">Other</option>
+                <label>Who owes you</label>
+                <select id="pending-person">
+                    <option value="Mama">Mama</option>
+                    <option value="Papa">Papa</option>
+                    <option value="Hermano/a">Hermano/a</option>
+                    <option value="Amigo/a">Amigo/a</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
 
             <div class="input-group">
                 <label>Details</label>
-                <input type="text" id="expense-details" placeholder="expense details">
+                <input type="text" id="pending-details" placeholder="what is it for">
             </div>
+
         </section>
 
         <section class="form-buttons">
-            <button class="add-btn expense-btn" onclick="saveExpense()">add</button>
+            <button class="add-btn pending-btn" onclick="savePending()">add</button>
             <button class="cancel-btn" onclick="navigateTo('home.html')">cancel</button>
         </section>
     </main>
     <script src="js/storage.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>

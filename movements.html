@@ -7,24 +7,26 @@
     <title>Movements - KoomiPay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <main class="movements-page">
-        <h1 class="movements-title">
-            Movements
-        </h1>
+        <h1 class="movements-title">Movements</h1>
+
+        <div class="movements-filters">
+            <button class="filter-chip active" data-filter="all" onclick="setFilter('all')">all</button>
+            <button class="filter-chip" data-filter="income" onclick="setFilter('income')">income</button>
+            <button class="filter-chip" data-filter="expense" onclick="setFilter('expense')">expense</button>
+            <button class="filter-chip" data-filter="pending" onclick="setFilter('pending')">pending</button>
+        </div>
+
         <section class="all-movements-list" id="all-movements-list"></section>
         <section class="movements-buttons">
-            <button class="movements-home-btn" onclick="navigateTo('home.html')">
-                back
-            </button>
-            <button class="movements-clear-btn" onclick="clearAllData()">
-                clear data
-            </button>
+            <button class="movements-home-btn" onclick="navigateTo('home.html')">back</button>
+            <button class="movements-clear-btn" onclick="clearAllData()">clear data</button>
         </section>
     </main>
     <script src="js/storage.js"></script>

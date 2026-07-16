@@ -6,29 +6,23 @@
     <title>Added Successfully - KoomiPay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <main class="confirm-container">
-        <img
-            src="img/confirm.png"
-            alt="Success"
-            class="confirm-image"
-        >
-        <h1 class="confirm-title">
-            Added <br>
-            successfully!
-        </h1>
+        <img src="img/confirm.png" alt="Success" class="confirm-image">
+        <h1 class="confirm-title">Added <br> successfully!</h1>
+        <p class="confirm-balance" id="confirm-balance"></p>
     </main>
 
+<script src="js/storage.js"></script>
 <script src="js/main.js"></script>
 <script>
     setTimeout(() => {
         navigateTo("home.html");
-    }, 1200);
-
+    }, 1400);
 </script>
 
 </body>
